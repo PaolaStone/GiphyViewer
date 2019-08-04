@@ -1,0 +1,56 @@
+body, html {
+    margin: auto;
+    height:90%;
+}
+
+body{
+    overflow: hidden;
+    height: 150%;
+}
+
+#left {
+    background-color:lightyellow;
+    
+}
+  
+.container-fluid {
+    height: 100%; 
+}
+
+.parent{
+    height:50%;
+    align-items: center;
+    background-color:gray;
+}
+
+#right {
+    background-color: lightblue;
+    
+}
+  
+#left, #right{
+    position: relative;
+    float: center;
+    text-align: center;
+    height:90%;
+    overflow-y: auto;
+    margin: auto;
+    margin-top: 40px;
+    padding-top: 15px;
+    
+}
+
+.btn-outline-secondary{
+    margin-bottom: 15px;
+}
+
+.alert{
+    margin-top: 10px;  
+    text-align: center;    
+}
+
+.input-group{
+    margin-left: 35%;
+    margin-top: 10px;
+    
+}
