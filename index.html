@@ -20,12 +20,23 @@
             <div class="row parent">
                 
                 <div class="col-md-3 text-center rounded" id="left">
-                    <div class="input-group">
+
+                    <form id="singer-form">
+                        <label for="singer-input"  ></label>
+                        <input type="text" id="singer-input" placeholder="Singer's name">
+                        <br>
+                        <br>
+                        <input id="addSinger" type="submit" class="btn btn-secondary" value="Add it!">
+                        <br>
+                        <br>
+                    </form>
+
+                    <!-- <div class="input-group">
                         <input type="text" placeholder="Singer's name">
                         <div class="input-group-append">
-                            <button class="btn btn-secondary" type="button">Add it!</button>
+                            <button id = "addButtom" class="btn btn-secondary" type="submit">Add it!</button>
                         </div>
-                    </div>
+                    </div> -->
                     <div id = "singers"></div>
                 </div>
                 

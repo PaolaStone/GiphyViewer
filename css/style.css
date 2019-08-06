@@ -72,3 +72,7 @@ body{
 p{
     display: block; 
 }
+
+input {
+    text-transform: capitalize;
+}

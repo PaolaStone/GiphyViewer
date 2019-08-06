@@ -1,6 +1,11 @@
 $(document).ready(function(){
 
-var topics = ["Sting", "Nirvana", "Roxette", "Bob Marley","Queen","Alanis"];
+var topics = ["Sting", "Nirvana", "Roxette", "Bob Marley","Elvis","Alanis"];
+
+// Add first buttoms
+
+function addButtons(){
+$("#singers").empty();
 
 for (var i = 0; i < topics.length; i++) {
     var a = $("<button>");
@@ -10,7 +15,15 @@ for (var i = 0; i < topics.length; i++) {
     $("#singers").append(a);
 }
 
-$("button").on("click", function() {
+}
+
+addButtons();
+
+// Show gifs after click
+
+function showGifs(){
+
+    $("button").on("click", function() {
     var singer = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + singer + "&api_key=8qUIxdQkedrfcw69XftvBvaiYuqYvD2s&limit=10"
     console.log("clicked first")
@@ -42,27 +55,39 @@ $("button").on("click", function() {
 
     })
 
-// button on click end
-
 });
+}
 
+showGifs();
+
+// Play - Stop
 $(document).on("click", ".imageClicked", function(){
-           
-    var state = $(this).attr("data-state");
-    console.log ("Clicked")
-    console.log($(this).attr("data-state"))
-    
-    if (state === "still"){
+        var state = $(this).attr("data-state");
+        if (state === "still"){
         $(this).attr("src",$(this).data("animate"));
         $(this).attr("data-state", "animate");
         
-        console.log($(this).attr("data-state"))
-    }else{
+        }else{
         $(this).attr('src', $(this).data('still'));
         $(this).attr('data-state', 'still');
-        console.log($(this).attr("data-state"))
+        
     };
 })
+
+
+// Add new singer
+$("#addSinger").on("click", function(event){
+    event.preventDefault();
+    var singer = $("#singer-input").val().trim();
+    console.log(singer)
+    singer = singer.charAt(0).toUpperCase() + singer.substr(1);
+    topics.push(singer);
+    addButtons();
+    $("#singer-input").val(" ")
+    showGifs();
+})
+
+$(document).on("click", ".singers-btn", showGifs);
 
 // the end
 });
