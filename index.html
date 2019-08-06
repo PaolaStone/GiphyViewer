@@ -8,9 +8,9 @@
 
     <body>
         
-        <div class="alert alert-warning">
+        <div class="alert alert-warning" id = "intro">
             <h2>Singers' gifs out there</h2>
-            <p>Click on any of the buttons bellow to see the selected singer gifs, or enter the name of the animal you prefer to add it to the options</p>
+            <p>Click on any of the buttons bellow to see the selected singer gifs, or enter the name of a singer you prefer to add it to the options</p>
         
         </div>
         <br>
@@ -22,8 +22,8 @@
                 <div class="col-md-3 text-center rounded" id="left">
 
                     <form id="singer-form">
-                        <label for="singer-input"  ></label>
-                        <input type="text" id="singer-input" placeholder="Singer's name">
+                        <label for="singer-input"></label>
+                        <input type="text" id="singer-input" class= "rounded" placeholder="Singer's name">
                         <br>
                         <br>
                         <input id="addSinger" type="submit" class="btn btn-secondary" value="Add it!">
@@ -31,13 +31,7 @@
                         <br>
                     </form>
 
-                    <!-- <div class="input-group">
-                        <input type="text" placeholder="Singer's name">
-                        <div class="input-group-append">
-                            <button id = "addButtom" class="btn btn-secondary" type="submit">Add it!</button>
-                        </div>
-                    </div> -->
-                    <div id = "singers"></div>
+                <div id = "singers"></div>
                 </div>
                 
                 <div class="col-md-8 rounded" id="right">

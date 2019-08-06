@@ -1,7 +1,8 @@
 body, html {
     margin: auto;
-    height:90%;
+    height:95%;
 }
+
 
 body{
     overflow: hidden;
@@ -31,7 +32,6 @@ body{
 #left, #right{
     position: relative;
     float: center;
-    /* text-align: center; */
     height:90%;
     overflow-y: auto;
     margin: auto;
@@ -42,7 +42,7 @@ body{
 
 .singers-btn{
     border-radius: 6px;
-    background-color: lightpink;
+    background-color: white;
     color: black;
     border: 2px solid darkgray;
     margin-left: 0px;

@@ -19,6 +19,11 @@ for (var i = 0; i < topics.length; i++) {
 
 addButtons();
 
+
+$(function() {
+    $('body').scrollTop(0);
+ });
+
 // Show gifs after click
 
 function showGifs(){
@@ -37,19 +42,16 @@ function showGifs(){
 
         for (var i = 0; i < results.length; i++) {
             var singersDiv = $("<div class=images>");
-            
             var singerImage = $("<img>");
             singerImage.attr("src", results[i].images.fixed_height_still.url);
             singerImage.attr("data-still", results[i].images.fixed_height_still.url)
             singerImage.attr("data-state", "still");
             singerImage.addClass("imageClicked");
             singerImage.attr("data-animate", results[i].images.fixed_height.url)
-            
+            $("#right").animate({scrollTop:0},"fast");
             singersDiv.append(singerImage);
-            
             var p = $("<p>").text("Rating:  " + results[i].rating);
             singersDiv.append(p);
-
             $("#right").prepend(singersDiv);
         }
 
@@ -81,13 +83,13 @@ $("#addSinger").on("click", function(event){
     var singer = $("#singer-input").val().trim();
     console.log(singer)
     singer = singer.charAt(0).toUpperCase() + singer.substr(1);
-    topics.push(singer);
+    topics.unshift(singer);
     addButtons();
     $("#singer-input").val(" ")
     showGifs();
 })
 
-$(document).on("click", ".singers-btn", showGifs);
+// $(document).on("click", ".singers-btn", showGifs);
 
 // the end
 });
