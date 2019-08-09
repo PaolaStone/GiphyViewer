@@ -9,7 +9,20 @@ $(document).ready(function(){
         var x = document.getElementById("right");
         x.style.display = "block";
     }
+    
     rightHide();
+
+    function clickPlayHide() {
+        var x = document.getElementById("clickPlay");
+        x.style.display = "none";
+    }
+    
+    function clickPlayShow() {
+        var x = document.getElementById("clickPlay");
+        x.style.display = "block";
+    }
+
+    clickPlayHide();
 
     var topics = ["Sting", "Nirvana", "Roxette", "Bob Marley","Elvis","Alanis"];
     
@@ -41,6 +54,7 @@ $(document).ready(function(){
     
         $("button").on("click", function() {
             rightShow();
+            clickPlayShow();
         var singer = $(this).attr("data-name");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + singer + "&api_key=8qUIxdQkedrfcw69XftvBvaiYuqYvD2s&limit=10"
         console.log("clicked first")
@@ -65,8 +79,10 @@ $(document).ready(function(){
                 var p = $("<p>").text("Rating:  " + results[i].rating);
                 singersDiv.append(p);
                 $("#right").prepend(singersDiv);
+                               
             }
-    
+            $("#right").prepend("<br/>");
+            $("#right").prepend("<h4>Best GIFs for "+ singer + "</h4>");
         })
     
     });

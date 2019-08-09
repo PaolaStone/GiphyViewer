@@ -4,19 +4,19 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="css\style.css">
+        
     </head>
 
     <body >
         
         <div class="alert alert-secondary" id = "intro">
-            <h2>Singers' gifs out there</h2>
-            <p>Click on any of the buttons bellow to see the selected singer gifs, or enter the name of a singer you prefer to add it to the options</p>
+            <h2>Best singers' GIFs</h2>
+            <h5>Click on any of the buttons bellow to see the selected singer gifs, or enter the name of a singer you prefer to add it to the options</h5>
         
         </div>
-        <br>
-        
+                
         <div class="container-fluid" >
-            
+         
             <div class="row parent">
                 
                 <div class="col-md-3 text-center rounded" id="left">
@@ -24,11 +24,12 @@
                     <form id="singer-form">
                         <label for="singer-input"></label>
                         <input type="text" id="singer-input" class= "rounded" placeholder="Singer's name">
-                        <br>
-                        <br>
+                       
                         <input id="addSinger" type="submit" class="btn btn-secondary" value="Add it!">
-                        <br>
-                        <br>
+                        <div id = "clickPlay" class="alert alert-secondary">
+                            <h6>Click on gifs to play them and click again to stop.</h6>
+                        </div> 
+                        
                     </form>
 
                 <div id = "singers"></div>
